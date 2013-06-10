@@ -46,6 +46,7 @@ $users = getSQLData();
 					// anything we want - e.g. data-foobar - but we'll use email and age since that's what our 
 					// data is called
 					foreach($users as $user) {
+						$user['email'] = !isset($user['email']) ? "N/A" : $user['email'];
 						printf("<tr class='userRow' data-email='".$user['email']."' data-age='".$user['age']."'>
 							<td class='userID'>".$user['id']."</td><td>".$user['name']."</td></tr>");
 					}
